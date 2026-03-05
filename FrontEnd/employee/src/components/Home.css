@@ -1,0 +1,268 @@
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* GLOBAL PAGE */
+body{
+  min-height:100vh;
+  font-family:"Segoe UI",sans-serif;
+
+  background:linear-gradient(135deg,#667eea,#764ba2);
+
+  display:flex;
+  justify-content:center;
+}
+
+/* MAIN CONTAINER */
+.home-container{
+  width:100%;
+  max-width:1400px;
+  padding:30px 20px;
+
+  display:grid;
+  gap:25px;
+}
+
+/* MOBILE */
+@media (max-width:600px){
+  .home-container{
+    grid-template-columns:1fr;
+  }
+}
+
+/* TABLET */
+@media (min-width:601px) and (max-width:992px){
+  .home-container{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* LAPTOP */
+@media (min-width:993px){
+  .home-container{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+/* LARGE SCREEN */
+@media (min-width:1300px){
+  .home-container{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+
+/* ADD EMPLOYEE BUTTON */
+.add-btn{
+  grid-column:1/-1;
+
+  padding:14px 22px;
+  font-size:16px;
+  font-weight:600;
+
+  border:none;
+  border-radius:12px;
+
+  background:linear-gradient(135deg,#ff7a18,#ffb347);
+
+  color:white;
+
+  width:230px;
+
+  cursor:pointer;
+
+  transition:all .3s;
+
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.add-btn:hover{
+  transform:translateY(-3px) scale(1.04);
+}
+
+/* CARD */
+.home-container > div{
+
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(8px);
+
+  padding:20px;
+
+  border-radius:16px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+  transition:all .3s;
+}
+
+.home-container > div:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 40px rgba(0,0,0,.2);
+}
+
+/* EMPLOYEE TEXT */
+.home-container > div > div{
+  font-size:15px;
+  margin:6px 0;
+  color:#374151;
+}
+
+.home-container > div > div:nth-child(1){
+  font-size:18px;
+  font-weight:600;
+  color:#5a4fcf;
+}
+
+/* EDIT BUTTON */
+.employee-actions{
+  margin-top:12px;
+
+  padding:9px 16px;
+
+  border:none;
+  border-radius:8px;
+
+  background:linear-gradient(135deg,#36d1dc,#5b86e5);
+
+  color:white;
+
+  cursor:pointer;
+
+  font-weight:500;
+
+  transition:.3s;
+  margin-right: 10px;
+}
+
+.employee-actions:hover{
+  transform:scale(1.05);
+}
+
+/* DELETE BUTTON */
+.delete-btn{
+  margin-top:10px;
+
+  padding:9px 16px;
+
+  border:none;
+  border-radius:8px;
+
+  background:linear-gradient(135deg,#ff416c,#ff4b2b);
+
+  color:white;
+
+  cursor:pointer;
+
+  font-weight:500;
+
+  transition:.3s;
+}
+
+.delete-btn:hover{
+  transform:scale(1.05);
+}
+
+/* DIVIDER */
+hr{
+  border:none;
+  height:1px;
+  background:#e5e7eb;
+  margin-top:15px;
+}
+
+/* MODAL OVERLAY */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(4px);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:15px;
+}
+
+/* MODAL */
+.modal-dialog{
+  width:100%;
+  max-width:500px;
+}
+
+/* MOBILE MODAL */
+@media(max-width:480px){
+  .modal-dialog{
+    max-width:100%;
+  }
+}
+
+.modal-content{
+  background:white;
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+  animation:modalOpen .35s ease;
+}
+
+/* MODAL HEADER */
+.modal-header{
+  background:linear-gradient(135deg,#667eea,#764ba2);
+
+  color:white;
+
+  padding:16px 20px;
+
+  font-size:18px;
+  font-weight:600;
+}
+
+/* MODAL BODY */
+.modal-body{
+  padding:20px;
+}
+
+/* INPUTS */
+.modal-body input{
+
+  width:100%;
+
+  padding:11px;
+
+  margin-bottom:14px;
+
+  border-radius:8px;
+
+  border:1px solid #d1d5db;
+
+  font-size:14px;
+
+  transition:.25s;
+}
+
+.modal-body input:focus{
+  outline:none;
+
+  border-color:#667eea;
+
+  box-shadow:0 0 6px rgba(102,126,234,.5);
+}
+
+/* MODAL ANIMATION */
+@keyframes modalOpen{
+  from{
+    transform:scale(.85);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
