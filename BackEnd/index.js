@@ -4,7 +4,7 @@ let app = exp();
 let mongoose = require("mongoose");
 app.use(exp.json());
 app.use(cors());
-const port=8080;
+const port=process.env.port || 8080;
 
 // connect mongodb
 let connection = mongoose.connect("mongodb+srv://employe:employe%40123@cluster0.citj4ar.mongodb.net/employee");
@@ -220,6 +220,7 @@ app.put('/puting',async(req,res)=>{
   console.log('updated data',putdata);
 })
 // http://localhost:8080/puting?_id=69a914f65e54bfb297a75634
+
 
 
 app.listen(port,(req,res)=>console.log('http://localhost:'+port+'/home'))
